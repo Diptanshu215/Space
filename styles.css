@@ -1,12 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: aerial, sans-serif;
-    align-items: center;
+    font-family: Arial, sans-serif;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    background-color: rgb(7, 8, 12)
+    overflow-y: auto; /* Ensure vertical scroll if content overflows */
+    background-color: rgb(7, 8, 12);
 }
 
 .firstpage {
@@ -28,7 +27,7 @@ body {
     text-align: center;
     color: white;
     font-size: 100px;
-    transform: translate(0%, -200%);
+    transform: translate(0%, -170%);
     transition: color 0.3s ease;
     transition: 0.5s;
 }
@@ -38,6 +37,15 @@ body {
     letter-spacing: 10px;
     text-shadow: 0 0 10px #ff3a96;
 }       
+
+.subtitle {
+    font-size: 1.5em;
+    margin-top: 10px;
+    animation: fadeIn 3s ease-in-out;
+    color:#ccc;
+    transform: translate(0%, -400%);
+    font-size: 30px;
+}
 
 .image {
     position: absolute; 
@@ -82,7 +90,7 @@ body {
     opacity: 0.58;
 }
 
-.button{
+.button {
     position: relative;
     height: 60px;
     width: 250px;
@@ -99,52 +107,62 @@ body {
     transition: background 0.5s;
 }
 
-.button:first-child:hover{
+.button:first-child:hover {
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
     background-size: 400%;
 }
 
-.button:last-child:hover{
+.button:last-child:hover {
     background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
     background-size: 400%;
 }
 
 button:first-child:before,
-button:last-child:before{
-  content: '';
-  position: absolute;
-  background: inherit;
-  top: -5px;
-  right: -5px;
-  bottom: -5px;
-  left: -5px;
-  border-radius: 50px;
-  filter: blur(20px);
-  opacity: 0;
-  transition: opacity 0.5s;
+button:last-child:before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 .button:first-child:hover:before,
-button:last-child:hover:before{
-  opacity: 1;
-  z-index: -1;
+button:last-child:hover:before {
+    opacity: 1;
+    z-index: -1;
 }
-.button:hover{
-  z-index: 1;
-  animation: glow 8s linear infinite;
+.button:hover {
+    z-index: 1;
+    animation: glow 8s linear infinite;
 }
 @keyframes glow {
-  0%{
-    background-position: 0%;
-  }
-  100%{
-    background-position: 400%;
-  }
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
 }
 
+.images-section {
+    padding: 20px;
+    background: rgb(7, 8, 12);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Style for the Great Filter section */
 .great-filter {
     padding: 20px;
-    background: #333;
+    background:  rgb(7, 8, 12);
     text-align: center;
+    min-height: 100vh; /* Ensure it takes up at least the full height of the viewport */
 }
 
 .great-filter h2 {
