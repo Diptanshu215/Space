@@ -16,6 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('enter-button').addEventListener('click', function() {
-        document.getElementById('great-filter').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('sec').scrollIntoView({ behavior: 'smooth' });
     });
 });
