@@ -1,198 +1,211 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(7, 8, 12);
-    overflow-y: auto; /* Ensure vertical scroll if content overflows */
-    position: relative; /* To position blinking dots */
-}
-
-.firstpage {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.welcome {
-    padding: 0;
-    position: relative;
-    height: fit-content;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: white;
-    font-size: 100px;
-    transform: translate(0%, -200%);
-    transition: color 0.3s ease;
-    transition: 0.5s;
-}
-
-.welcome:hover {
-    color: #ff0077;
-    letter-spacing: 10px;
-    text-shadow: 0 0 10px #ff3a96;
-}       
-
-.image {
-    position: absolute; 
-    top: 100px; 
-    left: 1000px;
-    width: 800px;
-    height: auto;
-    opacity: 0.5;
-    transition: transform 0.5s ease;
-}
-.image:hover {
-    transform: scale(1.1);
-}
-
-.image2 {
-    position: absolute;
-    top: -50px; 
-    left: -310px;
-    width: 650px;
-    height: auto;
-    mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 60%);
-    opacity: 0.58;
-}
-
-.image3 {
-    position: absolute;
-    top: 545px; 
-    left: 350px;
-    width: 250px;
-    height: auto;
-    mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
-    opacity: 0.58;
-}
-
-.image4 {
-    position: absolute;
-    top: 100px; 
-    left: 950px;
-    width: 100px;
-    height: auto;
-    mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
-    opacity: 0.58;
-}
-
-.button {
-    position: relative;
-    height: 60px;
-    width: 250px;
-    margin: 0 35px;
-    border-radius: 50px;
-    border: none;
-    outline: none;
-    background: linear-gradient(90deg, #fb380d, #ff3b86, #dbe255);
-    color: #fff;
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: background 0.5s;
-}
-
-.button:first-child:hover {
-    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-    background-size: 400%;
-}
-
-.button:last-child:hover {
-    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
-    background-size: 400%;
-}
-
-button:first-child:before,
-button:last-child:before {
-    content: '';
-    position: absolute;
-    background: inherit;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
-    border-radius: 50px;
-    filter: blur(20px);
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-.button:first-child:hover:before,
-button:last-child:hover:before {
-    opacity: 1;
-    z-index: -1;
-}
-.button:hover {
-    z-index: 1;
-    animation: glow 8s linear infinite;
-}
-@keyframes glow {
-    0% {
-        background-position: 0%;
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        overflow-y: auto; /* Ensure vertical scroll if content overflows */
+        position: relative; /* To position blinking dots */
     }
-    100% {
-        background-position: 400%;
+
+    .firstpage {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-size: cover; /* Ensure the background image covers the entire section */
     }
-}
 
-.images-section {
-    padding: 20px;
-    background: #222;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.great-filter {
-    padding: 20px;
-    background: #333;
-    text-align: center;
-    min-height: 100vh; /* Ensure it takes up at least the full height of the viewport */
-}
-
-.great-filter h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.great-filter p {
-    font-size: 1.2em;
-    color: #ccc;
-    margin: 10px 0;
-}
-
-#dot-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Ensure dots don't interfere with other interactions */
-}
-
-.dot {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background-color: rgb(142, 159, 195);
-    border-radius: 50%;
-    animation: blink 2s infinite;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 0.2;
+    .welcome {
+        padding: 0;
+        position: relative;
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        font-size: 100px;
+        transform: translate(0%, -100%);
+        transition: color 0.3s ease;
+        transition: 0.5s;
     }
-    50% {
+
+    .subtitle {
+        font-size: 50px;
+        color: white;
+        letter-spacing: 10px;
+        text-shadow: 0 0 10px #ff3a96;
+        transform: translate(0%, -100%);
+    }
+
+    .welcome:hover {
+        color: #ff0077;
+        letter-spacing: 10px;
+        text-shadow: 0 0 10px #ff3a96;
+    }       
+
+    .image {
+        position: absolute; 
+        top: 100px; 
+        left: 1000px;
+        width: 800px;
+        height: auto;
+        opacity: 0.5;
+        transition: transform 0.5s ease;
+    }
+    .image:hover {
+        transform: scale(1.1);
+    }
+
+    .image2 {
+        position: absolute;
+        top: -50px; 
+        left: -310px;
+        width: 650px;
+        height: auto;
+        mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 60%);
+        opacity: 0.58;
+    }
+
+    .image3 {
+        position: absolute;
+        top: 545px; 
+        left: 350px;
+        width: 250px;
+        height: auto;
+        mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+        opacity: 0.58;
+    }
+
+    .image4 {
+        position: absolute;
+        top: 100px; 
+        left: 950px;
+        width: 100px;
+        height: auto;
+        mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+        opacity: 0.58;
+    }
+
+    .button {
+        position: relative;
+        height: 60px;
+        width: 250px;
+        margin: 0 35px;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        background: linear-gradient(90deg, #fb380d, #ff3b86, #dbe255);
+        color: #fff;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: background 0.5s;
+    }
+
+    .button:first-child:hover {
+        background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+        background-size: 400%;
+    }
+
+    .button:last-child:hover {
+        background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+        background-size: 400%;
+    }
+
+    button:first-child:before,
+    button:last-child:before {
+        content: '';
+        position: absolute;
+        background: inherit;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        border-radius: 50px;
+        filter: blur(20px);
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .button:first-child:hover:before,
+    button:last-child:hover:before {
         opacity: 1;
+        z-index: -1;
     }
-    100% {
-        opacity: 0.3;
+    .button:hover {
+        z-index: 1;
+        animation: glow 8s linear infinite;
     }
+    @keyframes glow {
+        0% {
+            background-position: 0%;
+        }
+        100% {
+            background-position: 400%;
+        }
+    }
+
+    #dot-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Ensure dots don't interfere with other interactions */
+        z-index: 3; /* Adjust if needed */
+    }
+
+    .dot {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: rgb(142, 159, 195);
+        border-radius: 50%;
+        animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 0.2;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.3;
+        }
+    }
+
+    .img-section {
+        position: relative;
+        overflow: hidden;
+        height: 600px; /* Adjust height as needed */
+        background: url('stars1.jpg') no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    .image6{
+        position: absolute;
+        top: -250px; 
+        left: 0px;
+        width: 1550px;
+        height: auto;
+        opacity: 0.7;
+        z-index: 1;
+    }
+
+.bang{
+    font-size: 20px;
+    color: white;
+    transform: (40%, 30%);
+
+   
+
+    
 }
